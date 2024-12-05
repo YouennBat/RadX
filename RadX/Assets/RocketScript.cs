@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RocketScript : MonoBehaviour
 {
-    float turningSpeed = 180;
+    float turningSpeed = 90;
     float thrustValue = 2;
-    float gravity = 2;
+    // float gravity = 2;
     Rigidbody rb;
     Vector3 velocity, acceleration;
 
@@ -32,21 +32,21 @@ public class RocketScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            // Roll Left
-            transform.Rotate(Vector3.up, turningSpeed * Time.deltaTime);
+            // Rotate Left
+            transform.Rotate(Vector3.forward, turningSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.D))
         {
-            // Pitch Up
-            transform.Rotate(Vector3.right, turningSpeed * Time.deltaTime);
+            // Rotate Right
+            transform.Rotate(Vector3.back, turningSpeed * Time.deltaTime);
         }
 
         //Roll Using Mouse 
-        transform.Rotate(Vector3.up,
-            Input.GetAxis("Horizontal") * turningSpeed * Time.deltaTime);
+        //transform.Rotate(Vector3.up,
+           // Input.GetAxis("Horizontal") * turningSpeed * Time.deltaTime);
 
-        transform.Rotate(Vector3.right,
-           Input.GetAxis("Vertical") * turningSpeed * Time.deltaTime);
+       // transform.Rotate(Vector3.right,
+           // Input.GetAxis("Vertical") * turningSpeed * Time.deltaTime);
 
         //velocity += acceleration * Time.deltaTime;
         // transform.position += velocity * Time.deltaTime;  

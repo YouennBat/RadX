@@ -26,6 +26,7 @@ public class EdScript : MonoBehaviour
         edanim.SetBool("IsWalking", false);
         edanim.SetBool("IsRunning", false);
         edanim.SetBool("IsWalkingBack", false);
+        edanim.SetBool("IsTurning", false);
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -48,11 +49,13 @@ public class EdScript : MonoBehaviour
         {
             // Roll Left
             transform.Rotate(Vector3.up, turningSpeed * Time.deltaTime);
+            edanim.SetBool("IsTurning", true) ;
         }
         if (Input.GetKey(KeyCode.D))
         {
             // Pitch Up
             transform.Rotate(Vector3.up, -turningSpeed * Time.deltaTime);
+            edanim.SetBool("IsTurning", true);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
