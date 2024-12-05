@@ -7,7 +7,7 @@ public class VictimScript : MonoBehaviour
 {
     internal void Bump(float explosionForce, Vector3 explosionPosition, float explosionRadius)
     {
-        print("Bumped");
+       // print("Bumped");
         Renderer renderer = GetComponent<Renderer>();
         renderer.material.color = Color.red;
         Rigidbody rb= GetComponent<Rigidbody>();
