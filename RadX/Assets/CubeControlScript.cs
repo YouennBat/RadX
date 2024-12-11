@@ -5,9 +5,9 @@ using UnityEngine;
 public class CubeControlScript : MonoBehaviour
 {
     Rigidbody rb;
-    float jumpforce = 5;
-    float explosionRadius = 5;
-    float explosionStrength = 800;
+    float jumpforce = 10;
+    float explosionRadius = 1;
+    float explosionStrength = 10000;
 
 
     // Start is called before the first frame update
