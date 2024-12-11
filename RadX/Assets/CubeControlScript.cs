@@ -49,24 +49,21 @@ public class CubeControlScript : MonoBehaviour
     {
 
         VictimScript victimScript = collision.gameObject.GetComponent<VictimScript>();
-
-        Collider[] allVictims = Physics.OverlapSphere(transform.position + Vector3.down, explosionRadius);
-
-        foreach (Collider collider in allVictims)
+        if (victimScript != null)
         {
-            VictimScript newVictim = collider.gameObject.GetComponent<VictimScript>();
+            Collider[] allVictims = Physics.OverlapSphere(transform.position + Vector3.down, explosionRadius);
 
-            if (newVictim != null)
+            foreach (Collider collider in allVictims)
             {
-                newVictim.Bump(explosionStrength, transform.position + Vector3.down, explosionRadius);
+                VictimScript newVictim = collider.gameObject.GetComponent<VictimScript>();
+
+                if (newVictim != null)
+                {
+                    newVictim.Bump(explosionStrength, transform.position + Vector3.down, explosionRadius);
+                }
             }
         }
-
-        if (victimScript != null) 
-        {
-            victimScript.Bump(explosionStrength, transform.position + Vector3.down, explosionRadius);
-           
-        }
+  
 
         //if (collision.gameObject.name == "Victim")
         //{ 
