@@ -11,7 +11,7 @@ public class GiftProjectileScript : MonoBehaviour
 
     float jumpforce = 10;
     float explosionRadius = 1;
-    float explosionStrength = 10000;
+    float explosionStrength = 1000;
 
     internal void launchMe(Vector3 dir)
     {

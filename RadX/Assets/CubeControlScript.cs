@@ -7,7 +7,7 @@ public class CubeControlScript : MonoBehaviour
     Rigidbody rb;
     float jumpforce = 10;
     float explosionRadius = 1;
-    float explosionStrength = 10000;
+    float explosionStrength = 1000;
 
 
     // Start is called before the first frame update
